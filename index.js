@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const inquirer = require('inquirer');
 
 const DB = require('./DB');
@@ -19,7 +20,7 @@ const Auction = require('./model/Auction');
 async function run() {
   const db = new DB();
   await db.createConnection();
-
+  // scrpiting with the user increases count to give a quit option
   interact(db, 0);
 }
 
@@ -37,13 +38,16 @@ async function interact(db, count) {
         name: 'do',
         message: 'Buy or Sell',
         type: 'list',
+        // if it has the same inputs only need to put choises not choises:choises
         choices,
         default: 'Buy',
       }
   );
-
+  // basically a if statement but useing switch case
   switch (step1.do) {
     case 'Buy':
+      // acution is its own class an instance of a class
+      // db is the arguement where acution is the constructor
       const auction = new Auction(db);
       await auction.getBidFromUser();
       break;

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 
 /**
  * @see {@link https://www.npmjs.com/package/promise-mysql}
