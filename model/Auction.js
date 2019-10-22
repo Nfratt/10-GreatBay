@@ -32,7 +32,7 @@ class Auction {
         }
     );
     // eslint-disable-next-line max-len
-    // find is a function on an array that looks for a element in  an array and returns it
+    // find is a function on an array that looks for a element in  an array and returns it will only return one item aka the 1st that applies to your "FIND"
     const targetItem = items.find((it) => it.item_name == item.answer);
     if (targetItem.highest_bid < bid.answer) {
       await this.dbConn.updateItemWithBid(item.answer, bid.answer);
